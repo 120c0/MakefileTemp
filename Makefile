@@ -2,12 +2,9 @@ TARGET := Executable
 
 INCLUDE_DIR := include
 SOURCE_DIR := src
-BIN_DIR := bin
 FILE_EXTENSION := cpp
 
-SOURCE_FILES := \
-	$(SOURCE_DIR)/main.$(FILE_EXTENSION)\
-	$(SOURCE_DIR)/HelloWorld.$(FILE_EXTENSION)
+SOURCE_FILES := $(wildcard $(SOURCE_DIR)/*.$(FILE_EXTENSION))
 OBJECT_FILES := $(SOURCE_FILES:%.$(FILE_EXTENSION)=%.o)
 
 CFLAGS := -Wall -Wextra -pedantic -I$(INCLUDE_DIR)
